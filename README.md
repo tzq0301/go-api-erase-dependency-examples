@@ -1,0 +1,1 @@
+#### [Go 使用 Function API 解耦服务依赖](https://zhuanlan.zhihu.com/p/599873037)
