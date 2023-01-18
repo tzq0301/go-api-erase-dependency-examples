@@ -1,6 +1,8 @@
 package event
 
-import "api-examples/factor"
+import (
+	"api-examples/api"
+)
 
 type Service interface {
 	GetSomeEventInfo()
@@ -14,7 +16,7 @@ type Service interface {
 
 func NewService() Service {
 	s := &serviceImpl{}
-	GetSomeEventInfo = s.GetSomeEventInfo
+	api.GetSomeEventInfo = s.GetSomeEventInfo
 	return s
 }
 
@@ -30,6 +32,6 @@ type serviceImpl struct {
 
 func (s serviceImpl) GetSomeEventInfo() {
 	// do sth.
-	factor.GetSomeFactorInfo()
+	api.GetSomeFactorInfo()
 	// do sth.
 }

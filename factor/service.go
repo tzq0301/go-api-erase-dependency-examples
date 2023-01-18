@@ -1,6 +1,8 @@
 package factor
 
-import "api-examples/user"
+import (
+	"api-examples/api"
+)
 
 type Service interface {
 	GetSomeFactorInfo()
@@ -14,7 +16,7 @@ type Service interface {
 
 func NewService() Service {
 	s := &serviceImpl{}
-	GetSomeFactorInfo = s.GetSomeFactorInfo
+	api.GetSomeFactorInfo = s.GetSomeFactorInfo
 	return s
 }
 
@@ -30,6 +32,6 @@ type serviceImpl struct {
 
 func (s serviceImpl) GetSomeFactorInfo() {
 	// do sth.
-	user.GetSomeUserInfo()
+	api.GetSomeUserInfo()
 	// do sth.
 }

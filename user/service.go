@@ -1,6 +1,8 @@
 package user
 
-import "api-examples/event"
+import (
+	"api-examples/api"
+)
 
 type Service interface {
 	GetSomeUserInfo()
@@ -14,7 +16,7 @@ type Service interface {
 
 func NewService() Service {
 	s := &serviceImpl{}
-	GetSomeUserInfo = s.GetSomeUserInfo
+	api.GetSomeUserInfo = s.GetSomeUserInfo
 	return s
 }
 
@@ -30,6 +32,6 @@ type serviceImpl struct {
 
 func (s serviceImpl) GetSomeUserInfo() {
 	// do sth.
-	event.GetSomeEventInfo()
+	api.GetSomeEventInfo()
 	// do sth.
 }
